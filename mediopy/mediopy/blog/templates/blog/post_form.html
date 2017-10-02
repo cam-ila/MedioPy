@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container" style="padding-top: 10px;">
+    {# https://getbootstrap.com/docs/4.0/components/forms/ #}
+    <form method="POST" action=''>
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.auto_id }}">{{ field.label }}</label>
+                {% csrf_token %}
+									{{ field }}
+            </div>
+        {% endfor %}
+        <input type="submit" value="guardar" class="btn btn-primary btn-block"></input>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>var editor = new MediumEditor('.editable');</script>
+{% endblock %}

@@ -7,9 +7,12 @@
             <h1>Posts</h1>
         </div>
         <div class="col">
-            {% for post in posts %}
-            <h2>{{post.title}}</h2>
-            <p> {{post.content | safe}} </p>
+            {% for post in object_list %}
+
+              <ul>
+                <li><h2>{{post.title}}</h2></li>
+                <li><p> {{post.content | safe}} </p></li>
+              </ul>
             {% endfor %}
         </div>
     </div>
